@@ -13,9 +13,7 @@ public class DriverMapper
     {
         return new DriverDO(driverDTO.getUsername(), driverDTO.getPassword());
     }
-
-
-    public static DriverDTO makeDriverDTO(DriverDO driverDO)
+  public static DriverDTO makeDriverDTO(DriverDO driverDO)
     {
         DriverDTO.DriverDTOBuilder driverDTOBuilder = DriverDTO.newBuilder()
             .setId(driverDO.getId())
@@ -45,9 +43,7 @@ public class DriverMapper
 
         return driverDTOBuilder.createDriverDTO();
     }
-
-
-    public static List<DriverDTO> makeDriverDTOList(Collection<DriverDO> drivers)
+ public static List<DriverDTO> makeDriverDTOList(Collection<DriverDO> drivers)
     {
         return drivers.stream()
             .map(DriverMapper::makeDriverDTO)

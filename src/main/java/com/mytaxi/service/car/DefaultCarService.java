@@ -1,20 +1,13 @@
 package com.mytaxi.service.car;
 
-import java.util.Collections;
 import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import com.mytaxi.dataaccessobject.CarRepository;
-import com.mytaxi.datatransferobject.CarDTO;
 import com.mytaxi.domainobject.CarDO;
-import com.mytaxi.domainobject.DriverDO;
-import com.mytaxi.domainvalue.ChooseCarAction;
-import com.mytaxi.domainvalue.GeoCoordinate;
 import com.mytaxi.exception.ConstraintsViolationException;
 import com.mytaxi.exception.EntityNotFoundException;
 

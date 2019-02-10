@@ -1,5 +1,4 @@
 package com.mytaxi.service.driver;
-
 import com.mytaxi.datatransferobject.DriverSearchDTO;
 import com.mytaxi.domainobject.DriverDO;
 import com.mytaxi.domainvalue.ChooseCarAction;

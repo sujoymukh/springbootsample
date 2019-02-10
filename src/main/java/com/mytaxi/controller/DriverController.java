@@ -36,55 +36,55 @@ import com.mytaxi.service.driver.DriverService;
 public class DriverController
 {
 
-    private final DriverService driverService;
+	private final DriverService driverService;
 
 
-    @Autowired
-    public DriverController(final DriverService driverService)
-    {
-        this.driverService = driverService;
-    }
+	@Autowired
+	public DriverController(final DriverService driverService)
+	{
+		this.driverService = driverService;
+	}
 
 
-    @GetMapping("/{driverId}")
-    public DriverDTO getDriver(@PathVariable long driverId) throws EntityNotFoundException
-    {
-        return DriverMapper.makeDriverDTO(driverService.find(driverId));
-    }
+	@GetMapping("/{driverId}")
+	public DriverDTO getDriver(@PathVariable long driverId) throws EntityNotFoundException
+	{
+		return DriverMapper.makeDriverDTO(driverService.find(driverId));
+	}
 
 
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public DriverDTO createDriver(@Valid @RequestBody DriverDTO driverDTO) throws ConstraintsViolationException
-    {
-        DriverDO driverDO = DriverMapper.makeDriverDO(driverDTO);
-        return DriverMapper.makeDriverDTO(driverService.create(driverDO));
-    }
+	@PostMapping
+	@ResponseStatus(HttpStatus.CREATED)
+	public DriverDTO createDriver(@Valid @RequestBody DriverDTO driverDTO) throws ConstraintsViolationException
+	{
+		DriverDO driverDO = DriverMapper.makeDriverDO(driverDTO);
+		return DriverMapper.makeDriverDTO(driverService.create(driverDO));
+	}
 
 
-    @DeleteMapping("/{driverId}")
-    public void deleteDriver(@PathVariable long driverId) throws EntityNotFoundException
-    {
-        driverService.delete(driverId);
-    }
+	@DeleteMapping("/{driverId}")
+	public void deleteDriver(@PathVariable long driverId) throws EntityNotFoundException
+	{
+		driverService.delete(driverId);
+	}
 
 
-    @PutMapping("/{driverId}")
-    public void updateLocation(
-        @PathVariable long driverId, @RequestParam double longitude, @RequestParam double latitude)
-        throws EntityNotFoundException
-    {
-        driverService.updateLocation(driverId, longitude, latitude);
-    }
-  
-    @PutMapping("/{driverId}/cars/{carId}")
-    public void selectCar(@PathVariable Long driverId,@PathVariable Long carId,@RequestParam ChooseCarAction action) throws EntityNotFoundException,CarAlreadyInUseException
-    {
-       driverService.selectCar(driverId, carId, action);
-    }
-    @GetMapping("/search")
-    public List<DriverDTO> searchDriver(@Valid DriverSearchDTO driverSearch){
-    	List<DriverDO> list= driverService.searchDriver(driverSearch);
-    	return DriverMapper.makeDriverDTOList(list);
-    }
+	@PutMapping("/{driverId}")
+	public void updateLocation(
+			@PathVariable long driverId, @RequestParam double longitude, @RequestParam double latitude)
+					throws EntityNotFoundException
+	{
+		driverService.updateLocation(driverId, longitude, latitude);
+	}
+
+	@PutMapping("/{driverId}/cars/{carId}")
+	public void selectCar(@PathVariable Long driverId,@PathVariable Long carId,@RequestParam ChooseCarAction action) throws EntityNotFoundException,CarAlreadyInUseException
+	{
+		driverService.selectCar(driverId, carId, action);
+	}
+	@GetMapping("/search")
+	public List<DriverDTO> searchDriver(@Valid DriverSearchDTO driverSearch){
+		List<DriverDO> list= driverService.searchDriver(driverSearch);
+		return DriverMapper.makeDriverDTOList(list);
+	}
 }
