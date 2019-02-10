@@ -30,6 +30,21 @@ public class DriverMapper
 
         return driverDTOBuilder.createDriverDTO();
     }
+    public static DriverDTO makeDriverSerchDTO(DriverDTO driverDTO)
+    {
+        DriverDTO.DriverDTOBuilder driverDTOBuilder = DriverDTO.newBuilder()
+            .setId(driverDTO.getId())
+            .setPassword(driverDTO.getPassword())
+            .setUsername(driverDTO.getUsername());
+
+        GeoCoordinate coordinate = driverDTO.getCoordinate();
+        if (coordinate != null)
+        {
+            driverDTOBuilder.setCoordinate(coordinate);
+        }
+
+        return driverDTOBuilder.createDriverDTO();
+    }
 
 
     public static List<DriverDTO> makeDriverDTOList(Collection<DriverDO> drivers)
@@ -38,4 +53,5 @@ public class DriverMapper
             .map(DriverMapper::makeDriverDTO)
             .collect(Collectors.toList());
     }
+   
 }

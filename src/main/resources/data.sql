@@ -40,3 +40,15 @@ values
  (8,
  'aced0005737200226f72672e737072696e676672616d65776f726b2e646174612e67656f2e506f696e7431b9e90ef11a4006020002440001784400017978704023000000000000404bfa1cac083127', now(), now(), false, 'ONLINE',
 'driver08pw', 'driver08');
+--Create 3 cars convertible true and Engine type GAS
+
+insert into car (id,engine_type,license_plate,convertible,rating, date_created,manufacturer,deleted) values (1,'GAS','KA049978',true,1.0, now(),'Honda',false);
+
+insert into car (id,engine_type,license_plate,convertible,rating, date_created,manufacturer,deleted) values (2,'GAS','KA04978',true,2.0, now(),'Hundai',false);
+insert into car (id,engine_type,license_plate,convertible,rating, date_created,manufacturer,deleted) values (3,'GAS','KA049977',true,4.0, now(),'Tata',false);
+--create driver convertible false and Engine type=ELECTIC
+
+insert into car (id,engine_type,license_plate,convertible,rating, date_created,manufacturer,deleted) values (4,'ELECTIC','KA049781',false,5.0, now(),'Honda',false);
+insert into car (id,engine_type,license_plate,convertible,rating, date_created,manufacturer,deleted) values (5,'ELECTIC','KA0499782',false,4.0, now(),'Honda',false);
+
+insert into car (id,engine_type,license_plate,convertible,rating, date_created,manufacturer,deleted) values (6,'ELECTIC','KA049783',false,3.0, now(),'Honda',false);

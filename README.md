@@ -57,6 +57,8 @@ Imagine a driver management frontend that is used internally by mytaxi employees
 * driver/car attributes as input parameters
 * return list of drivers
 
+
+
 ---
 
 
@@ -75,3 +77,8 @@ Good luck!
 
 
 _NOTE: Please make sure to not submit any personal data with your tests result. Personal data is for example your name, your birth date, email address etc._
+
+
+
+Notes on solutions: task 3.
+Search  driver by car characteristics doesn't make sense if they are offline , as my assumption is only online drivers would be assigned / select a car.
