@@ -76,9 +76,7 @@ public class DriverController
     {
         driverService.updateLocation(driverId, longitude, latitude);
     }
-
-
-    
+  
     @PutMapping("/{driverId}/cars/{carId}")
     public void selectCar(@PathVariable Long driverId,@PathVariable Long carId,@RequestParam ChooseCarAction action) throws EntityNotFoundException,CarAlreadyInUseException
     {
